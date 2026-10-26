@@ -1,0 +1,56 @@
+/* ============================================================
+   Applications Page (Full-Width Directory Table & Headers)
+   ============================================================ */
+
+.applications-page {
+  animation: fadeIn 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 16px);
+  width: 100%;
+}
+
+.app-view-toggle {
+  display: flex;
+  background: var(--surface-elevated, #1A1A32);
+  border: 1px solid var(--border-subtle, rgba(255, 255, 255, 0.08));
+  border-radius: var(--radius-md, 8px);
+  overflow: hidden;
+}
+
+.app-view-btn {
+  width: 34px;
+  height: 34px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-tertiary);
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+}
+
+.app-view-btn:hover {
+  color: var(--text-primary);
+  background: rgba(var(--brand-primary-rgb, 108, 92, 231), 0.08);
+}
+
+.app-view-btn.active {
+  color: var(--brand-primary-light, #A29BFE);
+  background: rgba(var(--brand-primary-rgb, 108, 92, 231), 0.18);
+}
+
+/* Row hover actions */
+.app-row-actions {
+  opacity: 0;
+  transition: opacity var(--transition-fast);
+}
+
+.app-row:hover .app-row-actions {
+  opacity: 1;
+}
+
+.app-row:hover {
+  background: rgba(var(--brand-primary-rgb, 108, 92, 231), 0.04);
+}

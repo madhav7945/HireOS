@@ -1,0 +1,26 @@
+.audio-waveform-container {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px 10px;
+  border-radius: 20px;
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  transition: all 0.3s ease;
+}
+
+.audio-waveform-container.active.mode-ai {
+  border-color: rgba(108, 92, 231, 0.4);
+  box-shadow: 0 0 16px rgba(108, 92, 231, 0.25);
+}
+
+.audio-waveform-container.active.mode-candidate {
+  border-color: rgba(0, 184, 148, 0.4);
+  box-shadow: 0 0 16px rgba(0, 184, 148, 0.25);
+}
+
+.audio-waveform-canvas {
+  display: block;
+  max-width: 100%;
+}

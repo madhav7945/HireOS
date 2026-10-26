@@ -1,0 +1,52 @@
+Assignment: Microsoft Excel 
+Dataset
+Enter the following data into an Excel worksheet.
+
+Part A – Basic Formulas (15 Marks)
+Create the following new columns:
+Grade Criteria
+Result Criteria
+Pass → Percentage ≥ 40
+Fail → Percentage < 40
+
+Use the following Excel formulas
+SUM()
+AVERAGE()
+MAX()
+MIN()
+IF()
+AND()
+ROUND()
+
+Part B – Conditional Formatting (5 Marks)
+Apply the following conditional formatting rules:
+Highlight marks greater than or equal to 90 with Green Fill.
+Highlight marks less than 60 with Red Fill.
+Apply Data Bars on the Percentage column.
+Apply Color Scale on the Total Marks column.
+Highlight students having Grade = A+ using Light Blue Fill.
+
+Part C – Charts (10 Marks)
+Create the following charts in separate sheets.
+Chart 1
+Create a Clustered Column Chart showing:
+Student Name
+Total Marks
+Title:
+Student-wise Total Marks
+
+Chart 2
+Create a Pie Chart showing the average marks of:
+Maths
+Science
+English
+Computer
+Title:
+Subject-wise Average Marks
+
+Chart 3
+Create a Line Chart showing:
+Student Name
+Percentage
+Title:
+Percentage Trend of Students

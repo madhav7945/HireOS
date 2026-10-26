@@ -1,0 +1,105 @@
+/* ============================================================
+   Candidates Page (Full-Width Directory Table)
+   ============================================================ */
+
+.candidates-page {
+  animation: fadeIn 0.3s ease-out;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4, 16px);
+  width: 100%;
+}
+
+.candidates-filters {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3, 12px);
+  margin-bottom: var(--space-2, 8px);
+  flex-wrap: wrap;
+}
+
+/* Full-width candidates table */
+.candidates-table {
+  width: 100%;
+  min-width: 0;
+  border-radius: var(--radius-lg, 12px);
+  overflow: hidden;
+}
+
+.candidate-cell {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.candidate-avatar {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: var(--font-size-sm, 0.85rem);
+  flex-shrink: 0;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+}
+
+.candidate-cell-info {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 0;
+}
+
+.candidate-name-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.candidate-name {
+  font-weight: 600;
+  font-size: var(--font-size-sm, 0.88rem);
+  color: var(--text-primary);
+}
+
+.candidate-meta {
+  font-size: var(--font-size-xs, 0.78rem);
+  color: var(--text-tertiary);
+}
+
+.candidate-score-inline {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.candidate-score-badge {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-md, 8px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 800;
+  font-size: var(--font-size-sm, 0.88rem);
+  flex-shrink: 0;
+}
+
+.candidate-score-label {
+  font-size: 0.65rem;
+  color: var(--text-tertiary);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  font-weight: 600;
+}
+
+.candidate-td-optional {
+  color: var(--text-secondary);
+  max-width: 200px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 0.85rem;
+}

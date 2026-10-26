@@ -1,0 +1,75 @@
+/* ---- Referrals Page ---- */
+.referrals-page {
+  animation: fadeIn 0.3s ease-out;
+}
+
+.referrals-stats {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+.referral-stat-card {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4);
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+}
+
+.referrals-toolbar {
+  display: flex;
+  gap: var(--space-3);
+  margin-bottom: var(--space-4);
+  align-items: center;
+}
+
+/* Referrals modals */
+.referrals-modal-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(4px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+  padding: var(--space-4);
+}
+.referrals-modal {
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-default);
+  border-radius: 14px;
+  width: 100%;
+  max-width: 520px;
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.45);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  max-height: 88vh;
+}
+.referrals-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border-subtle);
+  font-weight: 600;
+  font-size: var(--font-size-sm);
+}
+.referrals-modal-header > span { display: inline-flex; align-items: center; gap: 8px; }
+.referrals-modal-body { padding: var(--space-4); overflow-y: auto; }
+.referrals-modal-footer {
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-4);
+  border-top: 1px solid var(--border-subtle);
+}
+.referral-detail-grid { display: flex; flex-direction: column; gap: var(--space-3); }
+.referral-detail-grid > div { display: flex; flex-direction: column; gap: 2px; }
+.referral-detail-grid .fp-label { font-size: var(--font-size-xs); color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.03em; }
+.referral-detail-grid .fp-value { font-size: var(--font-size-sm); font-weight: 600; }

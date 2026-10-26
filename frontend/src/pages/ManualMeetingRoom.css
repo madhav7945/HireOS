@@ -1,0 +1,337 @@
+/* ============================================================
+   Aura Connect — Obsidian & Neon (StitchMCP Executive Suite)
+   ============================================================ */
+
+.mr-page {
+  height: 100vh;
+  width: 100vw;
+  display: flex;
+  flex-direction: column;
+  background-color: #0a0a0a;
+  color: #e5e2e1;
+  overflow: hidden;
+  font-family: var(--font-sans, "Geist", "Inter", system-ui, sans-serif);
+  position: relative;
+}
+
+/* Glassmorphism helpers */
+.glass-panel {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(32px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.active-speaker {
+  border: 2px solid #8b5cf6 !important;
+  box-shadow: 0 0 25px rgba(139, 92, 246, 0.35) !important;
+}
+
+/* Top App Bar */
+.mr-topbar {
+  height: 64px;
+  width: 100%;
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 24px;
+  background: rgba(19, 19, 19, 0.8);
+  backdrop-filter: blur(20px);
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  z-index: 40;
+}
+
+.mr-topbar-divider {
+  width: 1px;
+  height: 22px;
+  background: rgba(255, 255, 255, 0.15);
+}
+
+.mr-topbar-right {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.mr-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 6px 14px;
+  border-radius: 999px;
+  font-size: 0.75rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.mr-pill.green {
+  background: #8b5cf6;
+  color: #ffffff;
+  border: none;
+}
+
+.mr-pill.green:hover {
+  background: #7c3aed;
+  transform: scale(1.04);
+}
+
+/* Main Area: Video Grid + Side Session Panel */
+.mr-main-area {
+  flex: 1;
+  display: flex;
+  min-height: 0;
+  padding: 16px 24px 100px 24px;
+  gap: 20px;
+  position: relative;
+  overflow: hidden;
+}
+
+/* Video Stage */
+.mr-stage {
+  flex: 1;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  min-width: 0;
+}
+
+.mr-live-captions-banner {
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: 20px;
+  padding: 6px 16px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 0.85rem;
+  color: #fff;
+  z-index: 10;
+}
+
+.mr-captions-tag {
+  background: #8b5cf6;
+  color: #fff;
+  font-weight: 800;
+  font-size: 0.65rem;
+  padding: 2px 6px;
+  border-radius: 4px;
+}
+
+/* 4-Party Video Grid */
+.mr-grid {
+  display: grid;
+  gap: 16px;
+  width: 100%;
+  height: 100%;
+}
+
+.mr-grid.cols-1 {
+  grid-template-columns: 1fr;
+}
+
+.mr-grid.cols-2 {
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr;
+}
+
+@media (min-height: 700px) {
+  .mr-grid.cols-2 {
+    grid-template-rows: 1fr;
+  }
+}
+
+/* Video Tile */
+.mr-tile {
+  position: relative;
+  background: #131313;
+  border-radius: 16px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4);
+}
+
+.mr-tile video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.mr-tile video.mirror {
+  transform: scaleX(-1);
+}
+
+.mr-tile-avatar {
+  width: 80px;
+  height: 80px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #fff;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+/* Floating Reactions */
+.mr-floating-reactions-layer {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 60;
+  overflow: hidden;
+}
+
+.mr-floating-reaction-item {
+  position: absolute;
+  bottom: 120px;
+  font-size: 2.8rem;
+  filter: drop-shadow(0 0 16px rgba(139, 92, 246, 0.6));
+}
+
+/* Whiteboard Chips */
+.mr-wb-chip {
+  background: rgba(139, 92, 246, 0.15);
+  border: 1px solid rgba(139, 92, 246, 0.35);
+  color: #c4b5fd;
+  border-radius: 6px;
+  padding: 3px 8px;
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.mr-wb-chip:hover {
+  background: rgba(139, 92, 246, 0.3);
+  color: #fff;
+}
+
+/* Pre-join Lobby View */
+.mr-lobby-page {
+  min-height: 100vh;
+  background: radial-gradient(circle at 50% 10%, #1c1538 0%, #0a0a0a 75%);
+  color: #e5e2e1;
+  display: flex;
+  flex-direction: column;
+}
+
+.mr-lobby-navbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 32px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.mr-lobby-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 52px;
+  padding: 40px;
+  flex-wrap: wrap;
+  max-width: 1240px;
+  margin: 0 auto;
+  width: 100%;
+}
+
+.mr-lobby-video-col {
+  flex: 1 1 520px;
+  max-width: 640px;
+  width: 100%;
+}
+
+.mr-lobby-video-card {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  background: #131313;
+  border-radius: 20px;
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7);
+}
+
+.mr-lobby-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transform: scaleX(-1);
+}
+
+.mr-lobby-video-placeholder {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  color: #94a3b8;
+}
+
+.mr-lobby-controls-overlay {
+  position: absolute;
+  bottom: 20px;
+  left: 0;
+  right: 0;
+  display: flex;
+  justify-content: center;
+  gap: 16px;
+}
+
+.mr-lobby-ctrl-btn {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  border: none;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #fff;
+  transition: all 0.2s;
+  backdrop-filter: blur(10px);
+}
+
+.mr-lobby-ctrl-btn.active {
+  background: rgba(255, 255, 255, 0.18);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+}
+
+.mr-lobby-ctrl-btn.muted {
+  background: #ef4444;
+}
+
+.mr-lobby-error-msg {
+  color: #fbbf24;
+  font-size: 0.85rem;
+  margin-top: 12px;
+  text-align: center;
+}
+
+.mr-lobby-join-col {
+  flex: 0 1 420px;
+  width: 100%;
+}
+
+.mr-lobby-card {
+  background: rgba(19, 19, 19, 0.85);
+  backdrop-filter: blur(24px);
+  border: 1px solid rgba(255, 255, 255, 0.12);
+  border-radius: 24px;
+  padding: 32px;
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+  text-align: center;
+}

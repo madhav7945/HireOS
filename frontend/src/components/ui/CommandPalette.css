@@ -1,0 +1,101 @@
+/* ---- Command Palette ---- */
+.command-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.6);
+  backdrop-filter: blur(8px);
+  z-index: var(--z-modal);
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding-top: 15vh;
+  animation: fadeIn 0.15s ease-out;
+}
+
+.command-palette {
+  width: 560px;
+  max-width: 92vw;
+  background: var(--surface-modal);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-xl);
+  box-shadow: var(--shadow-xl), 0 0 60px rgba(var(--brand-primary-rgb), 0.1);
+  overflow: hidden;
+  animation: slideDown 0.2s ease-out;
+}
+
+.command-input-wrapper {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-4) var(--space-5);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.command-search-icon {
+  color: var(--text-tertiary);
+  flex-shrink: 0;
+}
+
+.command-input {
+  flex: 1;
+  background: transparent;
+  border: none;
+  font-size: var(--font-size-md);
+  color: var(--text-primary);
+  padding: 0;
+}
+
+.command-input:focus {
+  box-shadow: none;
+}
+
+.command-esc {
+  font-size: 0.6rem;
+  padding: 2px 6px;
+  background: var(--surface-elevated);
+  border: 1px solid var(--border-subtle);
+  border-radius: 4px;
+  color: var(--text-tertiary);
+  font-family: var(--font-family);
+}
+
+.command-results {
+  max-height: 320px;
+  overflow-y: auto;
+  padding: var(--space-2);
+}
+
+.command-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  border-radius: var(--radius-md);
+  font-size: var(--font-size-sm);
+  color: var(--text-secondary);
+  transition: all var(--transition-fast);
+  width: 100%;
+  cursor: pointer;
+}
+
+.command-item:hover,
+.command-item.selected {
+  background: rgba(var(--brand-primary-rgb), 0.1);
+  color: var(--text-primary);
+}
+
+.command-empty {
+  padding: var(--space-8);
+  text-align: center;
+  color: var(--text-tertiary);
+  font-size: var(--font-size-sm);
+}
+
+.command-footer {
+  display: flex;
+  gap: var(--space-5);
+  padding: var(--space-3) var(--space-5);
+  border-top: 1px solid var(--border-subtle);
+  font-size: 0.65rem;
+  color: var(--text-tertiary);
+}

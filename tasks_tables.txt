@@ -1,0 +1,28 @@
+Student ID	Student Name	Maths	Science	English	Computer
+S101	Aarav	85	78	90	88
+S102	Diya	72	81	76	80
+S103	Kabir	95	89	92	97
+S104	Mehak	65	70	68	75
+S105	Arjun	88	84	86	91
+S106	Simran	91	94	89	93
+S107	Rohan	56	62	60	58
+S108	Ananya	79	83	81	85
+S109	Yash	67	72	70	74
+S110	Priya	98	96	95	99
+
+Column	Formula
+Total Marks	Sum of all four subjects
+Average	Average marks
+Highest Marks	Highest score among four subjects
+Lowest Marks	Lowest score among four subjects
+Percentage	(Total/400) × 100
+Grade	Based on Percentage
+Result	Pass/Fail
+
+Percentage	Grade
+90 and above	A+
+80–89	A
+70–79	B
+60–69	C
+50–59	D
+Below 50	F

@@ -1,0 +1,127 @@
+/* ---- Job Boards Page ---- */
+.job-boards-page { animation: fadeIn 0.3s ease-out; }
+
+.boards-kpi-strip {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: var(--space-3);
+  margin-bottom: var(--space-6);
+}
+@media (max-width: 900px) { .boards-kpi-strip { grid-template-columns: repeat(3, 1fr); } }
+@media (max-width: 600px) { .boards-kpi-strip { grid-template-columns: repeat(2, 1fr); } }
+
+.boards-kpi {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  transition: all var(--transition-base);
+}
+.boards-kpi:hover { transform: translateY(-2px); border-color: var(--border-default); }
+.boards-kpi-value { font-size: var(--font-size-xl); font-weight: 800; }
+.boards-kpi-label { font-size: var(--font-size-xs); color: var(--text-tertiary); }
+
+.boards-list { margin-bottom: var(--space-6); }
+.boards-list-header { margin-bottom: var(--space-4); }
+
+.boards-cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+  gap: var(--space-4);
+}
+
+.board-posting-card {
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-lg);
+  padding: var(--space-5);
+  transition: all var(--transition-base);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+.board-posting-card:hover { border-color: var(--border-default); box-shadow: var(--shadow-md); }
+
+.board-add-card {
+  border-style: dashed;
+  align-items: center;
+  justify-content: center;
+  min-height: 220px;
+  cursor: pointer;
+}
+.board-add-card:hover { border-color: var(--brand-primary); background: rgba(var(--brand-primary-rgb), 0.03); }
+
+.board-posting-top { display: flex; align-items: center; gap: var(--space-3); }
+.board-posting-logo {
+  width: 48px;
+  height: 48px;
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.board-posting-info { flex: 1; display: flex; flex-direction: column; gap: var(--space-1); }
+.board-posting-name { font-weight: 700; font-size: var(--font-size-base); }
+.board-posting-actions { display: flex; gap: var(--space-1); }
+
+.board-posting-metrics {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-2);
+  padding: var(--space-3);
+  background: var(--surface-elevated);
+  border-radius: var(--radius-md);
+}
+.bpm {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 2px;
+  color: var(--text-secondary);
+}
+.bpm-value { font-size: var(--font-size-sm); font-weight: 700; color: var(--text-primary); }
+.bpm-label { font-size: 0.6rem; color: var(--text-tertiary); text-transform: uppercase; letter-spacing: 0.04em; }
+
+.board-posting-dates {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--font-size-xs);
+  color: var(--text-tertiary);
+}
+.board-posting-dates span { display: flex; align-items: center; gap: var(--space-1); }
+
+/* Overview Grid */
+.boards-overview-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  gap: var(--space-3);
+}
+.board-overview-item {
+  display: flex;
+  align-items: center;
+  gap: var(--space-3);
+  padding: var(--space-3) var(--space-4);
+  background: var(--surface-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  transition: all var(--transition-fast);
+}
+.board-overview-item:hover { border-color: var(--border-default); }
+.board-overview-name { flex: 1; font-size: var(--font-size-sm); font-weight: 600; }
+.board-conn-badge {
+  font-size: 0.6rem;
+  font-weight: 600;
+  padding: 2px 8px;
+  border-radius: var(--radius-full);
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  background: rgba(155, 155, 192, 0.12);
+  color: var(--text-tertiary);
+}
+.board-conn-badge.connected { background: rgba(0, 184, 148, 0.12); color: var(--brand-success); }
